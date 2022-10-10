@@ -9,6 +9,6 @@
 
 ## How to run the tests
 
-''' 
+``` 
 python3 -m pytest -v  test.py
-'''
+```
