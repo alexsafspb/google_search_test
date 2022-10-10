@@ -1,4 +1,4 @@
-# google_search test task
+# selenium + pytest test task
 ## Условия задания
   На стеке python/pytest/selenium сделать проект
 ## Написать тест  
@@ -7,7 +7,25 @@
  3) в результатах запроса на странице ответа Google найти сайт
  4) перейти на сайт (открыть его) нажав на ссылку в результатах поиска.
 
-## How to run the tests
+### Установка зависимостей
+```
+pip install -r requirements.txt 
+```
+затем установка selenium-chromedriver
+```
+python3 -m selenium-chromedriver
+```
+NB! автоматически установленный selenium-chromedriver может не соответствовать версии Chrome
+в этом случае необходима ручная установка
+```
+google-chrome --version
+```
+после определения нужной версии selenium-chromedriver по версии Chrome его нужно скачать с
+https://sites.google.com/chromium.org/driver/ 
+разархивировать и скопировать в /usr/bin
+
+
+## Запуск тестов
 
 ``` 
 python3 -m pytest -v  test.py
