@@ -1,0 +1,3 @@
+selenium
+selenium-chromedriver
+pytest
