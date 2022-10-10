@@ -18,7 +18,6 @@ python3 -m selenium-chromedriver
 ```
 NB! автоматически установленный selenium-chromedriver 
     может не соответствовать версии Chrome.  
-    
     В этом случае необходима ручная установка
 ```
 google-chrome --version
