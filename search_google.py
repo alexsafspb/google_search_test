@@ -25,6 +25,12 @@ class BasePage:
     def check_title(self, title="Google", time=10):
         return WebDriverWait(self.driver, time).until(EC.title_contains(title),
                                                       message=f"Can't find title \"{title}\"")
+
+    def check_url(self, url="https://www.google.com/", time=10):
+        return WebDriverWait(self.driver, time).until(EC.url_matches(url),
+                                                      message=f"url doesn't match \"{url}\"")
+
+
 class GoogleSearchError(Exception):
     pass
 
@@ -85,10 +91,12 @@ if __name__ == "__main__":
     driver = webdriver.Chrome()
     Page = GoogleSearch(driver)
     Page.go_to_site()
-    print(Page.check_title())
+    Page.check_title()
+    Page.check_url()
     search = Page.search_word("Think24.ru")
-    print(search.text)
+    #print(search.text)
     element = Page.search_result_by_name("Think24 App")
     Page.click_on_search_result(element, "Think24 App")
+
     time.sleep(1)
     driver.close()

@@ -13,8 +13,8 @@ Page = search_google.GoogleSearch(driver)
 
 def test1_open_google():
     Page.go_to_site()
-    assert Page.driver.title == "Google"
-    assert Page.driver.current_url == "https://www.google.com/"
+    assert Page.check_title("Google")
+    assert Page.check_url("https://www.google.com/")
 
 def test2_search_in_google():
     Page.search_word(SEARCH_TEXT)
@@ -22,12 +22,13 @@ def test2_search_in_google():
 
 def test3_find_in_search_result():
     Page.search_result_by_name(LINK_NAME)
-    assert Page.driver.title == SEARCH_TITLE
+    assert Page.check_title(SEARCH_TITLE)
+
 
 def test4_click_on_search_result():
     Page.click_on_search_result(name=LINK_NAME)
-    assert Page.driver.title == LINK_NAME
-    assert Page.driver.current_url == TARGET_URL
+    assert Page.check_title(LINK_NAME)
+    assert Page.check_url(TARGET_URL)
 
 def test_teardown():
     driver.close()
