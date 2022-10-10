@@ -16,14 +16,16 @@ pip install -r requirements.txt
 ```
 python3 -m selenium-chromedriver
 ```
-NB! автоматически установленный selenium-chromedriver 
+NB! автоматически установленный chromedriver 
     может не соответствовать версии Chrome.  
-    В этом случае необходима ручная установка
+    В этом случае необходима ручная установка.  
+Версия Chome определяется как 
 ```
 google-chrome --version
 ```
-после определения нужной версии selenium-chromedriver по версии Chrome его нужно скачать с
-https://sites.google.com/chromium.org/driver/ 
+посленднее число в версии может не совпадать с версией chromedriver на сайте
+https://sites.google.com/chromium.org/driver/downloads
+после определения нужной версии selenium-chromedriver по версии Chrome его нужно скачать, 
 разархивировать и скопировать в /usr/bin
 
 
