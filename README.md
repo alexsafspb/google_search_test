@@ -23,9 +23,10 @@ NB! автоматически установленный chromedriver
 ```
 google-chrome --version
 ```
-посленднее число в версии может не совпадать с версией chromedriver на сайте
-https://sites.google.com/chromium.org/driver/downloads
-после определения нужной версии selenium-chromedriver по версии Chrome его нужно скачать, 
+Последнее число в версии может не совпадать с версией chromedriver на сайте
+https://sites.google.com/chromium.org/driver/downloads  
+
+После определения нужной версии selenium-chromedriver по версии Chrome его нужно скачать, 
 разархивировать и скопировать в /usr/bin
 
 
