@@ -2,12 +2,6 @@ import search_google
 from selenium import webdriver
 import pytest
 
-#SEARCH_TEXT = "Think24.ru"
-#BAD_SEARCH_TEXT = "e;kghrke;jvb;kjvb/kvb'vbqe'vbqekjvbq;kfjbqekvjc"
-#SEARCH_TITLE = "Think24.ru - Поиск в Google"
-#LINK_NAME = "Think24 App"
-#TARGET_URL = "https://think24.ru/"
-
 if __name__ == "__main__":
     print("not implemented, please call with pytest \n \"python3 -m pytest -v  test.py\"")
     exit(0)
