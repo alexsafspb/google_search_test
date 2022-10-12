@@ -1,4 +1,6 @@
 import pytest
+import search_google
+from selenium import webdriver
 
 def pytest_addoption(parser):
     parser.addoption("--remote", action="store")
@@ -35,7 +37,25 @@ def pytest_addoption(parser):
     )
 
 
-@pytest.fixture
+@pytest.fixture()
 def remote(request):
     return request.config.getoption("--remote")
+
+@pytest.fixture(scope="class") # <-- note class scope
+def oneTimeSetUp(request): # <-- note the additional `request` param
+    print("Running one time setUp")
+    if request.config.getoption("--remote"):
+           options = webdriver.ChromeOptions()
+           options.add_argument('--headless')
+           driver = webdriver.Remote("http://127.0.0.1:4444/wd/hub", options=options)
+    else:
+           driver = webdriver.Chrome()
+    Page = search_google.GoogleSearch(driver)
+    ## add `driver` attribute to the class under test -->
+    if request.cls is not None:
+        request.cls.Page = Page
+    ## <--
+    yield Page
+    print("Running one time tearDown")
+    driver.quit()
 
