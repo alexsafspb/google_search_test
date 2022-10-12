@@ -42,10 +42,15 @@ docker-compose start
 ## Запуск тестов
 1) Локальный Chrome и webdriver
 ``` 
-python3 -m pytest -v  test.py
+pytest -v  test.py
 ```
 2) Remote Chrome webdriver (используя docker-compose )
 
 ``` 
-python3 -m pytest -v  test.py --remote
+pytest -v  test.py --remote
+```
+
+3) Запуск тестов с отчетом в html
+```
+pytest --html=report.html --self-contained-html -v test.py --remote
 ```
