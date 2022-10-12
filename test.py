@@ -2,11 +2,11 @@ import search_google
 from selenium import webdriver
 import pytest
 
-SEARCH_TEXT = "Think24.ru"
-BAD_SEARCH_TEXT = "e;kghrke;jvb;kjvb/kvb'vbqe'vbqekjvbq;kfjbqekvjc"
-SEARCH_TITLE = "Think24.ru - Поиск в Google"
-LINK_NAME = "Think24 App"
-TARGET_URL = "https://think24.ru/"
+#SEARCH_TEXT = "Think24.ru"
+#BAD_SEARCH_TEXT = "e;kghrke;jvb;kjvb/kvb'vbqe'vbqekjvbq;kfjbqekvjc"
+#SEARCH_TITLE = "Think24.ru - Поиск в Google"
+#LINK_NAME = "Think24 App"
+#TARGET_URL = "https://think24.ru/"
 
 if __name__ == "__main__":
     print("not implemented, please call with pytest \n \"python3 -m pytest -v  test.py\"")
@@ -29,21 +29,21 @@ class TestGoogleSearch:
         assert Page.check_title("Google")
         assert Page.check_url("https://www.google.com/")
 
-    def test2_search_in_google(self):
+    def test2_search_in_google(self,search_text):
         Page = self.test_data["Page"]
-        Page.search_word(SEARCH_TEXT)
+        Page.search_word(search_text)
         assert Page.result_stats
 
-    def test3_find_link_in_search_result(self):
+    def test3_find_link_in_search_result(self, link_name, search_title):
         Page = self.test_data["Page"]
-        Page.search_result_by_name(LINK_NAME)
-        assert Page.check_title(SEARCH_TITLE)
+        Page.search_result_by_name(link_name)
+        assert Page.check_title(search_title)
 
-    def test4_click_on_search_result(self):
+    def test4_click_on_search_result(self, link_name, target_url):
         Page = self.test_data["Page"]
-        Page.click_on_search_result(name=LINK_NAME)
-        assert Page.check_title(LINK_NAME)
-        assert Page.check_url(TARGET_URL)
+        Page.click_on_search_result(name=link_name)
+        assert Page.check_title(link_name)
+        assert Page.check_url(target_url)
 
     def test_teardown(self):
         Page = self.test_data["Page"]
