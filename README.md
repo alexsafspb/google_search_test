@@ -31,6 +31,13 @@ https://sites.google.com/chromium.org/driver/downloads
 После определения нужной версии selenium-chromedriver по версии Chrome его нужно скачать, 
 разархивировать и скопировать в /usr/bin
 
+### Установка remote selenium chrome webdriver (docker-compose)
+```
+docker-compose up
+после успешного запуска прервать процесс
+docker-compose start
+```
+
 
 ## Запуск тестов
 1) Локальный Chrome и webdriver
