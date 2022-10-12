@@ -50,7 +50,7 @@ pytest -v  test.py
 pytest -v  test.py --remote
 ```
 
-3) Запуск тестов с отчетом в html
+3) Запуск тестов с отчетом в html (используя pytest-html)
 ```
 pytest --html=report.html --self-contained-html -v test.py --remote
 ```
