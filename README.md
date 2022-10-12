@@ -33,7 +33,12 @@ https://sites.google.com/chromium.org/driver/downloads
 
 
 ## Запуск тестов
-
+1) Локальный Chrome и webdriver
 ``` 
 python3 -m pytest -v  test.py
+```
+2) Remote Chrome webdriver (используя docker-compose )
+
+``` 
+python3 -m pytest -v  test.py --remote
 ```
